@@ -1,1 +1,2 @@
-# TheLansingCommons
+# The Lansing Commons
+
