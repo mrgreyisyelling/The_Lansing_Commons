@@ -25,3 +25,9 @@ Right now its an easy place to put the things I want to work on.
 **Tuesday, March 19th 2024, 7:02:31 am** 
 
 - I need to get the website hosted 
+	-I am going to use github pages
+	- Create the entry file for your site. GitHub Pages will look for an `index.html`, `index.md`, or `README.md` file as the entry file for your site.
+
+**9:27am** 
+
+So we need to change that code so that it produces a index.html and that the file is pushed to the github repo

@@ -1,0 +1,67 @@
+
+    <html>
+    <head>
+        <title>S3 Bucket Structure: dingadongacron</title>
+       <!-- <link rel="stylesheet" type="text/css" href="https://dingadongacron.s3.amazonaws.com/bucket_structure_style.css"> -->
+        <!-- <script src="https://dingadongacron.s3.amazonaws.com/toggleVisibility.js"></script> -->
+        <link rel="stylesheet" type="text/css" href="bucket_structure_style.css">
+        <script src="toggleVisibility.js"></script>
+    </head>
+    <body>
+    <div class="container">
+        <div id="content" class="content">
+            <h2>S3 Bucket Structure for dingadongacron</h2>
+    <div class='file' style='margin-left: 0px; color: hsl(0.0, 70%, 50%);'>├── <span class='file-name'>bucket_structure.html</span><span class='file-link'>[<a href='#'>link</a>]</span><span class='author-name'>Mike Penta</span> ......................... [file]</div>
+<div class='file' style='margin-left: 0px; color: hsl(120.0, 70%, 50%);'>├── <span class='file-name'>bucket_structure_style.css</span><span class='file-link'>[<a href='#'>link</a>]</span><span class='author-name'>Mike Penta</span> ......................... [file]</div>
+<div class='file' style='margin-left: 0px; color: hsl(240.0, 70%, 50%);'>├── <span class='file-name'>toggleVisibility.js</span><span class='file-link'>[<a href='#'>link</a>]</span><span class='author-name'>Mike Penta</span> ......................... [file]</div>
+</div>
+    <script>
+        document.getElementById('uploadButton').addEventListener('click', function() {
+                const fileInput = document.getElementById('fileInput');
+                const file = fileInput.files[0];
+                if (!file) {
+                    alert('Please select a file.');
+                    return;
+                }
+
+                const formData = new FormData();
+                formData.append('file', file);
+
+                fetch('http://localhost:8000/upload', {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();  // Process the JSON response
+                })
+                .then(data => {
+                    console.log(data); // Add this line to log the server's response
+                    alert(data);  // Display the message from the server
+                })
+                .catch(error => {
+                    console.error('Upload failed:', error);
+                });
+            });
+
+        document.getElementById('listFilesButton').addEventListener('click', function() {
+            fetch('http://localhost:8000/list-files')
+            .then(response => response.json())
+            .then(data => {
+                const fileList = document.getElementById('fileList');
+                fileList.innerHTML = ''; // Clear list
+                data.files.forEach(file => {
+                    const li = document.createElement('li');
+                    li.textContent = file.name + ' - URL: ' + file.url;
+                    fileList.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Error listing files:', error));
+        });
+    </script>
+    
+        </body>
+        </html>
+        

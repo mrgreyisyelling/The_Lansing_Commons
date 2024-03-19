@@ -1,0 +1,80 @@
+/* bucket_structure_style.css */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000; /* Black background */
+    color: #f0f0f0; /* Light color for contrast */
+    display: flex;
+    justify-content: center;
+}
+.content {
+    max-width: 800px;
+    width: 100%;
+    margin: 20px;
+    background-color: #013369; /* Initial dark blue replaced with black for base level */
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2); /* White drop shadow */
+    border: 1px solid #fff; /* Thin white edge */
+    border-radius: 10px;
+}
+h2 {
+    color: #FFFFFF; /* White for headings */
+}
+.directory, .file {
+    color: #FFFFFF; /* White for text */
+    margin-left: 20px; /* Adjusted for all items */
+    cursor: pointer;
+}
+.directory {
+    font-weight: bold;
+}
+.directory.open, .sub-folder, .sub-file {
+    /* Apply specific color through JavaScript for sub-items */
+}
+.author-name {
+    font-style: italic;
+    margin-left: 10px; /* Space between file name and author */
+}
+.file-name, .file-link {
+    display: inline; /* Ensure inline display for proper alignment */
+}
+.file-link {
+    font-style: italic;
+    color: #7ABAF2; /* Light blue for file links, consider adjusting if needed */
+    float: right; /* Align link to the right */
+    margin-right: 20px; /* Add some margin to the right */
+}
+.folder-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-out; /* Smooth transition for unfolding */
+}
+a {
+    text-decoration: none;
+    color: #FFD700; /* Adjust if needed for visibility */
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* bucket_structure_style.css */
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.content {
+    margin: 20px;
+    padding: 20px;
+}
+
+.directory, .file {
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.folder-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
+}
